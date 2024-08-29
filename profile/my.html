@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubana Venkatesan - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-red: #ff004c;
+        --dark-red: #df013c;
+        --light-red: #ff7400;
+        --primary-yellow: #ffcc00;
+        --dark-yellow: #e8b51b;
+        --light-yellow: #f3d060;
+        --darks-yellow: #ffffff;
+        --darks-red: #ffffff;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #32353c;
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+        scroll-behavior: smooth;
+    }
+/* Style for the About Me section */
+/* Style for the About Me section */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    border: 3px solid var(--primary-yellow); /* Border line */
+    border-radius: 1px;
+    background-color: var(--dark); /* Ensure text is readable */
+    margin: 20px auto;
+    max-width: 800px; /* Adjust the max-width as needed */
+    position: relative; /* For shadow effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* 3D shadow effect */
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    
+    width: calc(100% + 8px); /* Extends beyond the border */
+    height: calc(100% + 10px); /* Extends beyond the border */
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.3); /* Shadow effect */
+    z-index: -3; /* Behind the section content */
+    box-shadow: 0 15px 30px rgb(255, 247, 0); /* Enhanced 3D shadow */
+}
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(45deg, var(--primary-red), var(--primary-yellow));
+        color: #ffffff;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 4em;
+        margin: 0;
+        background: linear-gradient(45deg, var(--darks-yellow), var(--darks-red));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: text-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    header h1:hover {
+        text-shadow: 4px 5px 5px rgb(255, 255, 255);
+        transform: scale(1.05);
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
+    .profile-img {
+        display: block;
+        margin: 30px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 180px;
+        height: 180px;
+        border: 5px solid #ffffff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
+    }
+
+    .profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    nav {
+        position: relative;
+        background-color: #363638;
+        padding: 15px 0;
+    }
+
+    .nav-wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-button {
+        background: linear-gradient(45deg, var(--primary-red), var(--primary-yellow));
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1em;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+        transition: width 0.3s ease, height 0.3s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav-button:hover::before {
+        width: 0%;
+        height: 0%;
+    }
+
+    .nav-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(202, 96, 96, 0.3);
+    }
+
+    .nav-button:hover {
+        color: var(--primary-yellow);
+    }
+
+    .section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        color: var(--primary-yellow);
+    }
+
+    .skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .skill-card {
+        background-color: var(--dark-red);
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 1px;
+        box-shadow: 0 1px 2px rgb(255, 255, 255);
+        width: 250px; /* Adjust width for skills */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        text-align: center;
+        border: 2px solid transparent;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-10px);
+        border: 2px solid var(--primary-yellow);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .skill-icon {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .projects {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .project-card {
+        background-color: var(--dark);
+        color: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 300px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        position: relative;
+        border: 2px solid transparent;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover img {
+        opacity: 0.8;
+    }
+
+    .project-info {
+        padding: 20px;
+        background-color: var(--primary-red);
+        color: #ffffff;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        border: 2px solid var(--primary-yellow);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact {
+        padding: 60px 20px;
+        background-color: var(--primary-red);
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .contact a {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #ffffff;
+        color: var(--primary-red);
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin: 10px;
+    }
+
+    .contact a:hover {
+        background-color: var(--primary-yellow);
+        color: #ffffff;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #20232a;
+        color: #ffffff;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    .download-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: var(--primary-red);
+        color: #ffffff;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .download-btn:hover {
+        background-color: var(--primary-yellow);
+        color: #ffffff;
+    }
+
+    .social-icons a {
+        color: #ffffff;
+        font-size: 1.5em;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: var(--primary-yellow);
+    }
+
+    .feedback-form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feedback-form input, .feedback-form textarea {
+        width: 80%;
+        max-width: 600px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 1em;
+        color: #333333;
+    }
+
+    .feedback-form button {
+        padding: 10px 20px;
+        background-color: var(--primary-red);
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .feedback-form button:hover {
+        background-color: var(--primary-yellow);
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="profile-img">
+            <img src="mypic2.jpg" alt="Rubana Venkatesan">
+        </div>
+        <h1>Rubana Venkatesan</h1>
+        <p>B.Tech|Web Development|Flutter Enthusiastic</p>
+    </header>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="nav-inner">
+                <a href="#about" class="nav-button">About</a>
+                <a href="#skills" class="nav-button">Skills</a>
+                <a href="#projects" class="nav-button">Projects</a>
+                <a href="#contact" class="nav-button">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hi, I'm Rubana Venkatesan, a passionate web developer with a knack for creating visually appealing and user-friendly websites. I specialize in front-end development, bringing designs to life with HTML, CSS, and JavaScript. My goal is to create seamless and engaging digital experiences.</p>
+        <a href="RUBANA.pdf" class="download-btn" download>Download Resume</a>
+    </section>
+    
+    
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Programming</h3>
+                <p>Proficient in C programming, Python, and Object-Oriented Programming.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>Expertise in HTML, CSS, JavaScript, and responsive design.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3>Business Systems</h3>
+                <p>Strong understanding of integrating technology with business processes.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="deal-scout.jpg" alt="DealScout">
+                <div class="project-info">
+                    <h3>DealScout</h3>
+                    <p>A platform connecting garment manufacturers and stitching companies, streamlining the supply chain process.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="fertilizers.jpg" alt="Fertilizer E-commerce">
+                <div class="project-info">
+                    <h3>Fertilizer E-commerce</h3>
+                    <p>An e-commerce site for selling fertilizers, designed for ease of use and efficient product management.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="portfolio.jpg" alt="Personal Portfolio">
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>Showcases my skills, projects, and experiences, with a modern and interactive design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out through the form below or connect with me on social media!</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/Rubana V" target="_blank">🔗</a>
+            <a href="https://github.com/Rubana05" target="_blank">🐙</a>
+            <a href="mailto:kit26.csbs45@gmail.com">📧</a>
+        </div>
+        <form class="feedback-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Mail" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Rubana Venkatesan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
